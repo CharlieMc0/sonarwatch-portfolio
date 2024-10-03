@@ -32,6 +32,9 @@ export function getUrlEndpoints(): Record<NetworkIdType, string> {
       process.env['PORTFOLIO_APTOS_RPC'] ||
       'https://api.mainnet.aptoslabs.com/v1',
     sui: process.env['PORTFOLIO_SUI_RPC'] || 'https://sui-rpc.publicnode.com',
+    zetachain:
+      process.env['PORTFOLIO_ZETACHAIN_RPC'] ||
+      'https://zetachain-mainnet.g.allthatnode.com/archive/evm',
   };
 }
 

@@ -16,6 +16,8 @@ import {
   solanaNativeDecimals,
   suiNativeAddress,
   suiNativeDecimals,
+  zetachainNativeAddress,
+  zetachainNativeWrappedAddress,
 } from './addresses';
 
 export const bitcoinNetwork: Network = {
@@ -199,6 +201,29 @@ export const bnbNetwork: Network = {
     'https://github.com/sonarwatch/token-lists/releases/latest/download/sonarwatch.bnb.tokenlist.json',
 };
 
+export const zetachainNetwork: Network = {
+  id: NetworkId.zetachain,
+  name: 'Zetachain',
+  image: 'https://sonar.watch/img/networks/zetachain.webp',
+  addressSystem: AddressSystem.evm,
+  chainId: 7001,
+  native: {
+    address: zetachainNativeAddress,
+    decimals: 18,
+    coingeckoId: 'zetachain',
+  },
+  nativeWrapped: {
+    address: zetachainNativeWrappedAddress,
+    decimals: 18,
+    coingeckoId: 'wzeta',
+  },
+  isLive: true,
+  geckoId: 'zetachain',
+  llamaId: 'Zetachain',
+  tokenListUrl:
+    'https://github.com/sonarwatch/token-lists/releases/latest/download/sonarwatch.zetachain.tokenlist.json',
+};
+
 export const networks: Record<NetworkIdType, Network> = {
   [NetworkId.aptos]: aptosNetwork,
   [NetworkId.avalanche]: avalancheNetwork,
@@ -209,6 +234,7 @@ export const networks: Record<NetworkIdType, Network> = {
   [NetworkId.solana]: solanaNetwork,
   [NetworkId.sui]: suiNetwork,
   [NetworkId.sei]: seiNetwork,
+  [NetworkId.zetachain]: zetachainNetwork,
 };
 
 export const networksAsArray = Object.values(networks);
